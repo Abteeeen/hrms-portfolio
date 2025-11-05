@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HR Portfolio — Abhiram</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+  <div class="logo">⚡ HRMS Console</div>
+
+  <nav class="navbar">
+    <a href="#hero" class="nav-item active">Home</a>
+    <a href="#about" class="nav-item">About</a>
+    <a href="#projects" class="nav-item">Projects</a>
+    <a href="#contact" class="nav-item">Contact</a>
+  </nav>
+
+  <div class="profile">
+    <img src="images/admin.jpg" alt="Admin Avatar" class="avatar">
+    <span class="admin-name">Admin – Abhiram</span>
+  </div>
+</header>
+
+
+  <main>
+    <section id="hero" class="hero container">
+      <div class="hero-text">
+        <h2 id="typed-text"></h2>
+        <p>HR professional learning front-end development to create intuitive onboarding, attendance, and leave management pages.</p>
+        <a class="btn" href="#projects">See Templates</a>
+      </div>
+      <div class="hero-image">
+        <!-- This must match the filename you put in the images/ folder -->
+        <img src="images/profile.png" alt="Profile image" width="260">
+      </div>
+    </section>
+
+    <section id="about" class="container about">
+      <h3>About</h3>
+      <p>I’m an HR professional passionate about technology and people. Currently exploring HTML and CSS to design HR systems that simplify daily operations and enhance employee experiences.</p>
+    </section>
+
+    <section id="projects" class="container projects">
+  <h3>Projects</h3>
+  <div class="card-grid">
+    <article class="card">
+      <h4>Employee Directory</h4>
+      <p>A searchable directory layout for staff profiles.</p>
+      <a class="btn small" href="templates/employee_directory.html" target="_blank">Preview</a>
+    </article>
+
+    <article class="card">
+      <h4>Leave Tracker</h4>
+      <p>Interactive template to manage employee leaves.</p>
+       <a class="btn small" href="templates/leave_tracker.html" target="_blank">Preview</a>
+    </article>
+
+    <article class="card">
+      <h4>Onboarding Portal</h4>
+      <p>Step-by-step onboarding page for new hires.</p>
+      <a class="btn small" href="templates/onboarding_portal.html" target="_blank">Onboarding Portal</a>
+    </article>
+
+    <article class="card">
+       <h4>HR Dashboard</h4>
+       <p>Real-time dashboard to view submitted onboarding details.</p>
+       <a class="btn small" href="templates/hr_dashboard.html" target="_blank">Preview</a>
+    </article>
+
+  </div>
+</section>
+
+    <section id="contact" class="container contact">
+      <h3>Contact</h3>
+      <p>Email: abhiramaanil@gmail.com</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Abhiram — HR Templates</p>
+    </div>
+  </footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  // ===== TYPING EFFECT =====
+const text = "HR Management Templates";
+const speed = 100; // milliseconds per letter
+let i = 0;
+
+function typeEffect() {
+  if (i < text.length) {
+    document.getElementById("typed-text").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeEffect, speed);
+  }
+}
+
+window.onload = typeEffect;
+</script>
+</body>
+</html>

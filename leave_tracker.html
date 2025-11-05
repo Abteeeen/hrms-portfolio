@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leave Tracker — HRMS</title>
+  <link rel="stylesheet" href="../css/leave.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Leave Tracker Portal</h1>
+  </header>
+
+  <main class="form-container">
+    <form id="leaveForm">
+      <label>Employee Name</label>
+      <input type="text" name="name" required>
+
+      <label>Department</label>
+      <select name="department" required>
+        <option>HR</option>
+        <option>Engineering</option>
+        <option>Marketing</option>
+        <option>Finance</option>
+      </select>
+
+      <label>Leave Type</label>
+      <select name="type" required>
+        <option>Casual Leave</option>
+        <option>Sick Leave</option>
+        <option>Earned Leave</option>
+      </select>
+
+      <label>From Date</label>
+      <input type="date" name="from" required>
+
+      <label>To Date</label>
+      <input type="date" name="to" required>
+
+      <label>Reason</label>
+      <textarea name="reason" rows="3" required></textarea>
+
+      <button type="submit">Submit Request</button>
+    </form>
+
+    <div id="output"></div>
+  </main>
+
+  <script>
+    const form = document.getElementById('leaveForm');
+    const output = document.getElementById('output');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+      data.status = "Pending"; // Default status
+
+      const existing = JSON.parse(localStorage.getItem('leaveRequests')) || [];
+      existing.push(data);
+      localStorage.setItem('leaveRequests', JSON.stringify(existing));
+
+      output.innerHTML = `
+        <h2>✅ Leave Submitted</h2>
+        <p>${data.name}, your ${data.type.toLowerCase()} request is pending approval.</p>
+      `;
+
+      form.reset();
+    });
+  </script>
+</body>
+</html>
