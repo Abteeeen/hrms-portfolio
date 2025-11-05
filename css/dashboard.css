@@ -1,0 +1,385 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap');
+
+/* ===== BASE ===== */
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background: radial-gradient(circle at top left, #080812 0%, #000 100%);
+  color: #e6e6e6;
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ===== HEADER ===== */
+.topbar {
+  text-align: center;
+  background: rgba(15, 15, 25, 0.9);
+  padding: 1rem;
+  border-bottom: 1px solid rgba(0,255,255,0.2);
+  color: #00fff9;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px #00fff9, 0 0 20px #00fff9;
+  backdrop-filter: blur(6px);
+}
+
+/* ===== MAIN WRAPPER ===== */
+.dashboard {
+  width: 90%;
+  max-width: 1100px;
+  margin: 3rem auto;
+  background: rgba(20,20,30,0.85);
+  border: 1px solid rgba(0,255,255,0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 0 25px rgba(0,255,255,0.08);
+}
+
+/* ===== ACTION BUTTONS ===== */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.actions button {
+  background: linear-gradient(90deg,#00fff9,#ff00ff);
+  color: #000;
+  font-weight: 700;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.actions button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #00fff9, 0 0 22px #ff00ff;
+}
+
+/* ===== SUMMARY ===== */
+.summary {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.summary h2 {
+  color: #00fff9;
+  text-shadow: 0 0 10px #00fff9;
+  margin-bottom: 0.4rem;
+}
+
+/* ===== TABLE ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #e6e6e6;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid rgba(0,255,255,0.15);
+  text-align: left;
+}
+
+th {
+  color: #00fff9;
+  font-weight: 700;
+  text-shadow: 0 0 8px #00fff9;
+  background: rgba(15,15,25,0.8);
+}
+
+tr:hover {
+  background: rgba(0,255,255,0.08);
+  transition: background 0.3s;
+}
+
+/* ===== STATUS BADGES ===== */
+.badge {
+  padding: 0.3rem 0.7rem;
+  border-radius: 5px;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: .3px;
+}
+
+.badge.pending {
+  background: #ffcc00;
+  color: #000;
+  box-shadow: 0 0 6px #ffcc00;
+}
+
+.badge.approved {
+  background: #00ff99;
+  color: #000;
+  box-shadow: 0 0 6px #00ff99;
+}
+
+.badge.rejected {
+  background: #ff0044;
+  color: #fff;
+  box-shadow: 0 0 6px #ff0044;
+}
+
+/* ===== ACTION BUTTONS IN TABLE ===== */
+.approve, .reject {
+  padding: 0.3rem 0.8rem;
+  margin: 0 0.3rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.approve {
+  background: #00ff99;
+  color: #000;
+}
+.approve:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #00ff99;
+}
+
+.reject {
+  background: #ff0044;
+  color: #fff;
+}
+.reject:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #ff0044;
+}
+
+/* ===== SMOOTH SCROLL & HOVER SHINE ===== */
+html { scroll-behavior: smooth; }
+
+a, button, th, td, h1, h2 {
+  transition: all 0.3s ease;
+}
+a:hover, th:hover, h1:hover, h2:hover {
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #00fff9;
+}
+
+/* ===== RESPONSIVE FIX ===== */
+@media (max-width: 1000px) {
+  .dashboard {
+    padding: 1rem;
+  }
+
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto; /* Enables horizontal scroll on small screens */
+    white-space: nowrap; /* Prevents buttons and text from wrapping oddly */
+    border-radius: 8px;
+  }
+
+  th, td {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .approve, .reject {
+    display: inline-block;
+    margin: 0.2rem;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .actions button {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    font-size: 1.2rem;
+  }
+
+  .summary h2 {
+    font-size: 1.3rem;
+  }
+
+  table {
+    font-size: 0.85rem;
+  }
+
+  .approve, .reject {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.4rem;
+  }
+}
+/* ===== TAB BUTTONS ===== */
+.actions button.active {
+  box-shadow: 0 0 15px #00fff9, 0 0 30px #ff00ff;
+  transform: scale(1.05);
+}
+
+/* ===== HIDE/SHOW SECTIONS ===== */
+.hidden {
+  display: none;
+}
+
+.data-section {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* ===== UNIVERSAL FLEXIBILITY ===== */
+.dashboard {
+  width: 95%;
+  max-width: 1100px;
+  margin: 2rem auto;
+  background: rgba(20,20,30,0.85);
+  border: 1px solid rgba(0,255,255,0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 0 25px rgba(0,255,255,0.08);
+  transition: all 0.3s ease;
+}
+
+/* ===== RESPONSIVE TABLE CONTAINER ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #e6e6e6;
+  overflow-x: auto;
+  display: block; /* allows scroll and width adjustments */
+}
+
+th, td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid rgba(0,255,255,0.1);
+  text-align: left;
+  white-space: nowrap; /* prevents text wrapping awkwardly */
+}
+
+/* ===== RESPONSIVE DESIGN BREAKPOINTS ===== */
+
+/* Large screens */
+@media (max-width: 1200px) {
+  .dashboard {
+    padding: 1.5rem;
+    width: 96%;
+  }
+}
+
+/* Tablets and small laptops */
+@media (max-width: 992px) {
+  body {
+    font-size: 0.95rem;
+  }
+
+  .dashboard {
+    padding: 1.2rem;
+    width: 95%;
+  }
+
+  th, td {
+    padding: 0.7rem 0.8rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .actions button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Tablets and large phones */
+@media (max-width: 768px) {
+  .topbar {
+    font-size: 1.3rem;
+  }
+
+  table {
+    font-size: 0.85rem;
+  }
+
+  .approve, .reject {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  th, td {
+    padding: 0.6rem;
+  }
+
+  .summary h2 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  .dashboard {
+    padding: 1rem;
+    width: 96%;
+  }
+
+  .topbar {
+    font-size: 1.1rem;
+  }
+
+  table {
+    font-size: 0.8rem;
+  }
+
+  th, td {
+    padding: 0.5rem;
+  }
+
+  .approve, .reject {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.4rem;
+  }
+
+  .actions button {
+    width: 100%;
+    max-width: 250px;
+    font-size: 0.9rem;
+  }
+
+  /* Allow horizontal scroll if table too wide */
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+/* ===== TABLE ALIGNMENT FIX ===== */
+.table-wrapper {
+  width: 100%;
+  padding: 0 2rem;            /* adds clean space on left and right */
+  box-sizing: border-box;
+  overflow-x: auto;           /* still allows scrolling on small screens */
+}
+
+.table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+}
