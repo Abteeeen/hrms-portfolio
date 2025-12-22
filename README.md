@@ -1,10 +1,4 @@
-Here is a professional `README.md` for your **HRMS Portfolio** repository.
 
-Since the repository currently contains only HTML, CSS, and images, I have described it as a **Frontend UI / Design Prototype**. You can copy and paste this directly.
-
----
-
-```markdown
 # HRMS Portfolio Frontend 👥
 
 A responsive frontend user interface designed for a **Human Resource Management System (HRMS)**. This project demonstrates the UI/UX design for managing employee data, attendance, and administrative tasks.
