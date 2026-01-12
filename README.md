@@ -22,7 +22,7 @@ hrms-portfolio/
 * **Navigation:** Intuitive menu structure for easy access to different modules.
 * **Visual Assets:** Optimized usage of images and icons to enhance user experience.
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stacks used
 
 * **Structure:** HTML5
 * **Styling:** CSS3 (Custom Grid/Flexbox)
