@@ -15,7 +15,8 @@ hrms-portfolio/
 
 ```
 
-## ✨ Features
+## ✨ Featuress
+
 
 * **Responsive Design:** Fully adaptable layout for desktop, tablet, and mobile screens.
 * **Modern UI:** Clean and professional interface suitable for enterprise HR tools.
