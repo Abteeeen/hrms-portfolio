@@ -15,7 +15,7 @@ hrms-portfolio/
 
 ```
 
-## ✨ Features
+## ✨ Features Implemented
 
 
 * **Responsive Design:** Fully adaptable layout for desktop, tablet, and mobile screens.
